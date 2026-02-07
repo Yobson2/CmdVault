@@ -1,0 +1,103 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    name: Claude PR Review
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run linter
+        id: lint
+        run: pnpm run lint
+        continue-on-error: true
+
+      - name: Run build
+        id: build
+        run: pnpm run build
+        continue-on-error: true
+
+      - name: Get changed files
+        id: changed
+        run: |
+          echo "files=$(git diff --name-only origin/main...HEAD | grep -E '\.(ts|tsx)$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - name: Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          model: claude-sonnet-4-20250514
+          allowed_tools: |
+            Read
+            Grep
+            Glob
+          trigger: auto
+          review_focus: |
+            Focus on:
+            1. TypeScript type safety - no `any` types
+            2. React patterns - proper hooks usage
+            3. Security - input validation, XSS prevention
+            4. Performance - unnecessary re-renders
+            5. Code conventions - following project patterns
+
+            Skip:
+            - Style opinions
+            - Documentation suggestions
+            - Minor formatting
+
+            For this project (CmdVault):
+            - Uses TanStack Router (file-based)
+            - Uses TanStack Query for server state
+            - Uses Zustand for client state
+            - Uses ShadcnUI + TailwindCSS 4
+            - Uses React Hook Form + Zod
+
+      - name: Post review summary
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const lintPassed = '${{ steps.lint.outcome }}' === 'success';
+            const buildPassed = '${{ steps.build.outcome }}' === 'success';
+
+            let status = '## Build Status\n\n';
+            status += lintPassed ? '✅ Lint passed\n' : '❌ Lint failed\n';
+            status += buildPassed ? '✅ Build passed\n' : '❌ Build failed\n';
+
+            // Only post if there are issues
+            if (!lintPassed || !buildPassed) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: status
+              });
+            }
