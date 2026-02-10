@@ -68,7 +68,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       description: 'Redirecting...',
     })
 
-    const redirectTo = search?.redirect ?? '/commands'
+    const redirectTo = search?.redirect ?? '/dashboard'
     navigate({ to: redirectTo })
   }
 
@@ -76,6 +76,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     setIsLoading(true)
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
     })
     if (error) {
       setIsLoading(false)

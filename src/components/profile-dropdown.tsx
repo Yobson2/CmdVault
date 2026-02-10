@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Link } from '@tanstack/react-router'
+import { LogOut, Settings, UserCircle } from 'lucide-react'
 
 export function ProfileDropdown() {
   const { user, signOut } = useAuthStore((s) => s.auth)
@@ -58,20 +59,20 @@ export function ProfileDropdown() {
           <DropdownMenuItem asChild>
             <Link to='/dashboard/settings'>
               Profile
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+              <DropdownMenuShortcut><UserCircle className="w-4 h-4" /></DropdownMenuShortcut>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link to='/dashboard/settings'>
               Settings
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+              <DropdownMenuShortcut><Settings className="w-4 h-4" /></DropdownMenuShortcut>
             </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleLogout}>
           Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+          <DropdownMenuShortcut><LogOut className="w-4 h-4" /></DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

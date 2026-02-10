@@ -77,6 +77,9 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
     setIsLoading(true)
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
     })
     if (error) {
       setIsLoading(false)

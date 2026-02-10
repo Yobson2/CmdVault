@@ -14,11 +14,17 @@ const fallback: CommandDefaults = {
   visibility: 'private',
 }
 
+let cachedRaw: string | null = null
+let cachedSnapshot: CommandDefaults = fallback
+
 function getSnapshot(): CommandDefaults {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return fallback
-    return { ...fallback, ...JSON.parse(raw) }
+    if (raw === cachedRaw) return cachedSnapshot
+    cachedRaw = raw
+    cachedSnapshot = { ...fallback, ...JSON.parse(raw) }
+    return cachedSnapshot
   } catch {
     return fallback
   }

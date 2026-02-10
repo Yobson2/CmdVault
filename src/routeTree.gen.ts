@@ -14,9 +14,12 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as PublicImport } from './routes/_public'
 import { Route as AuthenticatedRouteImport } from './routes/_authenticated/route'
 import { Route as PublicIndexImport } from './routes/_public/index'
+import { Route as AuthCallbackImport } from './routes/auth.callback'
+import { Route as PublicTermsImport } from './routes/_public/terms'
 import { Route as PublicTeamImport } from './routes/_public/team'
 import { Route as PublicReportIssueImport } from './routes/_public/report-issue'
 import { Route as PublicRegisterImport } from './routes/_public/register'
+import { Route as PublicPrivacyImport } from './routes/_public/privacy'
 import { Route as PublicMissionImport } from './routes/_public/mission'
 import { Route as PublicLoginImport } from './routes/_public/login'
 import { Route as PublicJoinImport } from './routes/_public/join'
@@ -71,6 +74,18 @@ const PublicIndexRoute = PublicIndexImport.update({
   getParentRoute: () => PublicRoute,
 } as any)
 
+const AuthCallbackRoute = AuthCallbackImport.update({
+  id: '/auth/callback',
+  path: '/auth/callback',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PublicTermsRoute = PublicTermsImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => PublicRoute,
+} as any)
+
 const PublicTeamRoute = PublicTeamImport.update({
   id: '/team',
   path: '/team',
@@ -86,6 +101,12 @@ const PublicReportIssueRoute = PublicReportIssueImport.update({
 const PublicRegisterRoute = PublicRegisterImport.update({
   id: '/register',
   path: '/register',
+  getParentRoute: () => PublicRoute,
+} as any)
+
+const PublicPrivacyRoute = PublicPrivacyImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => PublicRoute,
 } as any)
 
@@ -447,6 +468,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicMissionImport
       parentRoute: typeof PublicImport
     }
+    '/_public/privacy': {
+      id: '/_public/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PublicPrivacyImport
+      parentRoute: typeof PublicImport
+    }
     '/_public/register': {
       id: '/_public/register'
       path: '/register'
@@ -467,6 +495,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/team'
       preLoaderRoute: typeof PublicTeamImport
       parentRoute: typeof PublicImport
+    }
+    '/_public/terms': {
+      id: '/_public/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof PublicTermsImport
+      parentRoute: typeof PublicImport
+    }
+    '/auth/callback': {
+      id: '/auth/callback'
+      path: '/auth/callback'
+      fullPath: '/auth/callback'
+      preLoaderRoute: typeof AuthCallbackImport
+      parentRoute: typeof rootRoute
     }
     '/_public/': {
       id: '/_public/'
@@ -668,9 +710,11 @@ interface PublicRouteChildren {
   PublicJoinRoute: typeof PublicJoinRoute
   PublicLoginRoute: typeof PublicLoginRoute
   PublicMissionRoute: typeof PublicMissionRoute
+  PublicPrivacyRoute: typeof PublicPrivacyRoute
   PublicRegisterRoute: typeof PublicRegisterRoute
   PublicReportIssueRoute: typeof PublicReportIssueRoute
   PublicTeamRoute: typeof PublicTeamRoute
+  PublicTermsRoute: typeof PublicTermsRoute
   PublicIndexRoute: typeof PublicIndexRoute
   PublicServicesChauffeursRoute: typeof PublicServicesChauffeursRoute
   PublicServicesFlotteRoute: typeof PublicServicesFlotteRoute
@@ -687,9 +731,11 @@ const PublicRouteChildren: PublicRouteChildren = {
   PublicJoinRoute: PublicJoinRoute,
   PublicLoginRoute: PublicLoginRoute,
   PublicMissionRoute: PublicMissionRoute,
+  PublicPrivacyRoute: PublicPrivacyRoute,
   PublicRegisterRoute: PublicRegisterRoute,
   PublicReportIssueRoute: PublicReportIssueRoute,
   PublicTeamRoute: PublicTeamRoute,
+  PublicTermsRoute: PublicTermsRoute,
   PublicIndexRoute: PublicIndexRoute,
   PublicServicesChauffeursRoute: PublicServicesChauffeursRoute,
   PublicServicesFlotteRoute: PublicServicesFlotteRoute,
@@ -720,9 +766,12 @@ export interface FileRoutesByFullPath {
   '/join': typeof PublicJoinRoute
   '/login': typeof PublicLoginRoute
   '/mission': typeof PublicMissionRoute
+  '/privacy': typeof PublicPrivacyRoute
   '/register': typeof PublicRegisterRoute
   '/report-issue': typeof PublicReportIssueRoute
   '/team': typeof PublicTeamRoute
+  '/terms': typeof PublicTermsRoute
+  '/auth/callback': typeof AuthCallbackRoute
   '/': typeof PublicIndexRoute
   '/dashboard/settings': typeof AuthenticatedDashboardSettingsRouteRouteWithChildren
   '/services/chauffeurs': typeof PublicServicesChauffeursRoute
@@ -763,9 +812,12 @@ export interface FileRoutesByTo {
   '/join': typeof PublicJoinRoute
   '/login': typeof PublicLoginRoute
   '/mission': typeof PublicMissionRoute
+  '/privacy': typeof PublicPrivacyRoute
   '/register': typeof PublicRegisterRoute
   '/report-issue': typeof PublicReportIssueRoute
   '/team': typeof PublicTeamRoute
+  '/terms': typeof PublicTermsRoute
+  '/auth/callback': typeof AuthCallbackRoute
   '/': typeof PublicIndexRoute
   '/services/chauffeurs': typeof PublicServicesChauffeursRoute
   '/services/flotte': typeof PublicServicesFlotteRoute
@@ -807,9 +859,12 @@ export interface FileRoutesById {
   '/_public/join': typeof PublicJoinRoute
   '/_public/login': typeof PublicLoginRoute
   '/_public/mission': typeof PublicMissionRoute
+  '/_public/privacy': typeof PublicPrivacyRoute
   '/_public/register': typeof PublicRegisterRoute
   '/_public/report-issue': typeof PublicReportIssueRoute
   '/_public/team': typeof PublicTeamRoute
+  '/_public/terms': typeof PublicTermsRoute
+  '/auth/callback': typeof AuthCallbackRoute
   '/_public/': typeof PublicIndexRoute
   '/_authenticated/dashboard/settings': typeof AuthenticatedDashboardSettingsRouteRouteWithChildren
   '/_public/services/chauffeurs': typeof PublicServicesChauffeursRoute
@@ -852,9 +907,12 @@ export interface FileRouteTypes {
     | '/join'
     | '/login'
     | '/mission'
+    | '/privacy'
     | '/register'
     | '/report-issue'
     | '/team'
+    | '/terms'
+    | '/auth/callback'
     | '/'
     | '/dashboard/settings'
     | '/services/chauffeurs'
@@ -894,9 +952,12 @@ export interface FileRouteTypes {
     | '/join'
     | '/login'
     | '/mission'
+    | '/privacy'
     | '/register'
     | '/report-issue'
     | '/team'
+    | '/terms'
+    | '/auth/callback'
     | '/'
     | '/services/chauffeurs'
     | '/services/flotte'
@@ -936,9 +997,12 @@ export interface FileRouteTypes {
     | '/_public/join'
     | '/_public/login'
     | '/_public/mission'
+    | '/_public/privacy'
     | '/_public/register'
     | '/_public/report-issue'
     | '/_public/team'
+    | '/_public/terms'
+    | '/auth/callback'
     | '/_public/'
     | '/_authenticated/dashboard/settings'
     | '/_public/services/chauffeurs'
@@ -974,6 +1038,7 @@ export interface RootRouteChildren {
   errors404Route: typeof errors404Route
   errors500Route: typeof errors500Route
   errors503Route: typeof errors503Route
+  AuthCallbackRoute: typeof AuthCallbackRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -989,6 +1054,7 @@ const rootRouteChildren: RootRouteChildren = {
   errors404Route: errors404Route,
   errors500Route: errors500Route,
   errors503Route: errors503Route,
+  AuthCallbackRoute: AuthCallbackRoute,
 }
 
 export const routeTree = rootRoute
@@ -1012,7 +1078,8 @@ export const routeTree = rootRoute
         "/(errors)/403",
         "/(errors)/404",
         "/(errors)/500",
-        "/(errors)/503"
+        "/(errors)/503",
+        "/auth/callback"
       ]
     },
     "/_authenticated": {
@@ -1037,9 +1104,11 @@ export const routeTree = rootRoute
         "/_public/join",
         "/_public/login",
         "/_public/mission",
+        "/_public/privacy",
         "/_public/register",
         "/_public/report-issue",
         "/_public/team",
+        "/_public/terms",
         "/_public/",
         "/_public/services/chauffeurs",
         "/_public/services/flotte",
@@ -1106,6 +1175,10 @@ export const routeTree = rootRoute
       "filePath": "_public/mission.tsx",
       "parent": "/_public"
     },
+    "/_public/privacy": {
+      "filePath": "_public/privacy.tsx",
+      "parent": "/_public"
+    },
     "/_public/register": {
       "filePath": "_public/register.tsx",
       "parent": "/_public"
@@ -1117,6 +1190,13 @@ export const routeTree = rootRoute
     "/_public/team": {
       "filePath": "_public/team.tsx",
       "parent": "/_public"
+    },
+    "/_public/terms": {
+      "filePath": "_public/terms.tsx",
+      "parent": "/_public"
+    },
+    "/auth/callback": {
+      "filePath": "auth.callback.tsx"
     },
     "/_public/": {
       "filePath": "_public/index.tsx",

@@ -88,10 +88,20 @@ const Footer = () => {
             <h3 className='mb-4 text-lg font-semibold'>Legal</h3>
             <ul className='space-y-2'>
               <li>
-                <span className='cursor-default text-gray-400'>Terms of Service</span>
+                <Link
+                  to='/terms'
+                  className='text-gray-400 transition-colors hover:text-cyan-400'
+                >
+                  Terms of Service
+                </Link>
               </li>
               <li>
-                <span className='cursor-default text-gray-400'>Privacy Policy</span>
+                <Link
+                  to='/privacy'
+                  className='text-gray-400 transition-colors hover:text-cyan-400'
+                >
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>
