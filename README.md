@@ -1,6 +1,6 @@
 # CmdVault - Store, Reuse & Share Proven Commands
 
-**Live Demo:** https://cmd-vault-eqvidsovn-yobson-devs-projects.vercel.app/
+**Live Demo:** https://cmd-vault.vercel.app/
 
 <div align="center">
   <img src="https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react" alt="React" />
