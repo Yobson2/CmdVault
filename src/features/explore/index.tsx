@@ -6,9 +6,9 @@ import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { CommandCard } from './components/command-card'
 import { ExploreToolbar } from './components/explore-toolbar'
+import type { ExploreCommand } from './data/schema'
 import { useExploreQuery } from './hooks/use-explore-queries'
 import type { ExploreFilters } from './services/explore-service'
-import type { ExploreCommand } from './data/schema'
 
 export default function Explore() {
   const [filters, setFilters] = useState<ExploreFilters>({
@@ -18,7 +18,7 @@ export default function Explore() {
 
   return (
     <>
-      <Header fixed className='border-b border-border bg-background'>
+      <Header fixed className='border-border bg-background border-b'>
         <div className='flex items-center gap-2'>
           <h1 className='text-lg font-semibold'>Explore</h1>
         </div>
@@ -50,9 +50,7 @@ export default function Explore() {
             </div>
           ) : !commands?.length ? (
             <div className='flex h-24 items-center justify-center'>
-              <p className='text-muted-foreground'>
-                No public commands found.
-              </p>
+              <p className='text-muted-foreground'>No public commands found.</p>
             </div>
           ) : (
             <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>

@@ -1,6 +1,6 @@
+import { Link } from '@tanstack/react-router'
 import { Terminal, Search, Tag, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from '@tanstack/react-router'
 
 const HeroSection = () => {
   return (
@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className='absolute inset-0 -z-10 bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900' />
       <div className='absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_60%)]' />
 
-      <div className='container z-10 mx-auto px-4'>
+      <div className='z-10 container mx-auto px-4'>
         <div className='grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
           <div className='space-y-6'>
             <h1 className='text-4xl font-bold text-white md:text-5xl lg:text-6xl'>
@@ -75,9 +75,7 @@ const HeroSection = () => {
                 <div className='h-3 w-3 rounded-full bg-red-400' />
                 <div className='h-3 w-3 rounded-full bg-yellow-400' />
                 <div className='h-3 w-3 rounded-full bg-green-400' />
-                <span className='ml-2 text-xs text-indigo-300'>
-                  terminal
-                </span>
+                <span className='ml-2 text-xs text-indigo-300'>terminal</span>
               </div>
               <div className='space-y-3 font-mono text-sm'>
                 <div className='text-cyan-300'>

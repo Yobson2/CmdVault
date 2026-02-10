@@ -1,10 +1,6 @@
 import { useNavigate } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
-import {
-  ChevronsUpDown,
-  LogOut,
-  Settings,
-} from 'lucide-react'
+import { ChevronsUpDown, LogOut, Settings } from 'lucide-react'
 import { useAuthStore } from '@/stores/authStore'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {

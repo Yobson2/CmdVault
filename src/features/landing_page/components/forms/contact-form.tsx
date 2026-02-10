@@ -1,6 +1,7 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import * as z from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -13,12 +14,14 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { toast } from 'sonner'
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  subject: z.string().min(5, 'Subject must be at least 5 characters').optional(),
+  subject: z
+    .string()
+    .min(5, 'Subject must be at least 5 characters')
+    .optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
@@ -35,10 +38,10 @@ export function ContactForm() {
     },
   })
 
-  async function onSubmit(data: ContactFormValues) {
+  async function onSubmit(_data: ContactFormValues) {
     try {
       // TODO: Replace with actual API call
-      // const response = await axios.post('/api/contact', data)
+      // const response = await axios.post('/api/contact', _data)
 
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -48,7 +51,7 @@ export function ContactForm() {
       })
 
       form.reset()
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to send message', {
         description: 'Please try again later or email us directly.',
       })
@@ -79,7 +82,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email Address *</FormLabel>
               <FormControl>
-                <Input type='email' placeholder='your.email@example.com' {...field} />
+                <Input
+                  type='email'
+                  placeholder='your.email@example.com'
+                  {...field}
+                />
               </FormControl>
               <FormDescription>
                 We'll use this to respond to your message

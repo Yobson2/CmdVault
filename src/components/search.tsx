@@ -22,7 +22,7 @@ export function Search({ className = '', placeholder = 'Search' }: Props) {
     >
       <IconTerminal2
         aria-hidden='true'
-        className='absolute top-1/2 left-1.5 -translate-y-1/2 h-4 w-4'
+        className='absolute top-1/2 left-1.5 h-4 w-4 -translate-y-1/2'
       />
       <span className='ml-3'>{placeholder}</span>
     </Button>

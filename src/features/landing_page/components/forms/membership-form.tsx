@@ -1,6 +1,7 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import * as z from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -12,7 +13,6 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Select,
   SelectContent,
@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { toast } from 'sonner'
+import { Textarea } from '@/components/ui/textarea'
 
 const membershipFormSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -30,7 +30,10 @@ const membershipFormSchema = z.object({
   studentId: z.string().optional(),
   program: z.string().optional(),
   yearOfStudy: z.string().optional(),
-  motivation: z.string().min(50, 'Please provide at least 50 characters explaining your motivation').optional(),
+  motivation: z
+    .string()
+    .min(50, 'Please provide at least 50 characters explaining your motivation')
+    .optional(),
 })
 
 type MembershipFormValues = z.infer<typeof membershipFormSchema>
@@ -50,10 +53,10 @@ export function MembershipForm() {
     },
   })
 
-  async function onSubmit(data: MembershipFormValues) {
+  async function onSubmit(_data: MembershipFormValues) {
     try {
       // TODO: Replace with actual API call
-      // const response = await axios.post('/api/membership', data)
+      // const response = await axios.post('/api/membership', _data)
 
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -63,7 +66,7 @@ export function MembershipForm() {
       })
 
       form.reset()
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to submit membership request', {
         description: 'Please try again later or contact us directly.',
       })
@@ -111,7 +114,11 @@ export function MembershipForm() {
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
-                  <Input type='email' placeholder='john.doe@example.com' {...field} />
+                  <Input
+                    type='email'
+                    placeholder='john.doe@example.com'
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -125,7 +132,11 @@ export function MembershipForm() {
               <FormItem>
                 <FormLabel>Phone Number</FormLabel>
                 <FormControl>
-                  <Input type='tel' placeholder='+1 (555) 000-0000' {...field} />
+                  <Input
+                    type='tel'
+                    placeholder='+1 (555) 000-0000'
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -157,7 +168,10 @@ export function MembershipForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Year of Study</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder='Select your year' />
@@ -184,7 +198,10 @@ export function MembershipForm() {
             <FormItem>
               <FormLabel>Program / Major</FormLabel>
               <FormControl>
-                <Input placeholder='Computer Science, Business Administration, etc.' {...field} />
+                <Input
+                  placeholder='Computer Science, Business Administration, etc.'
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -205,7 +222,8 @@ export function MembershipForm() {
                 />
               </FormControl>
               <FormDescription>
-                Share your interests and what you hope to contribute (minimum 50 characters)
+                Share your interests and what you hope to contribute (minimum 50
+                characters)
               </FormDescription>
               <FormMessage />
             </FormItem>

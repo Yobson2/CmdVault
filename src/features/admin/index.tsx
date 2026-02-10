@@ -11,15 +11,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Skeleton } from '@/components/ui/skeleton'
 import { Header } from '@/components/layout/header'
 import { Main } from '@/components/layout/main'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
-import { Skeleton } from '@/components/ui/skeleton'
-import { useDashboardStats } from './hooks/use-dashboard-queries'
+import { ThemeSwitch } from '@/components/theme-switch'
 import { Overview } from './components/overview'
 import { RecentSales } from './components/recent-sales'
-import { ThemeSwitch } from '@/components/theme-switch'
+import { useDashboardStats } from './hooks/use-dashboard-queries'
 
 export default function DashboardAdmin() {
   const { data: stats, isLoading } = useDashboardStats()
@@ -53,16 +53,15 @@ export default function DashboardAdmin() {
 
   return (
     <>
-      <Header fixed className='border-b border-border bg-background'>
+      <Header fixed className='border-border bg-background border-b'>
         <div className='flex items-center gap-2'>
           <h1 className='text-lg font-semibold'>Dashboard</h1>
         </div>
         <div className='ml-auto flex items-center space-x-4'>
           <Search />
-           <ThemeSwitch />
+          <ThemeSwitch />
           <ProfileDropdown />
         </div>
-        
       </Header>
 
       <Main>
@@ -100,7 +99,7 @@ export default function DashboardAdmin() {
                     {isLoading ? (
                       <Skeleton className='h-9 w-20' />
                     ) : (
-                      <div className='text-3xl font-bold tabular-nums tracking-tight'>
+                      <div className='text-3xl font-bold tracking-tight tabular-nums'>
                         {card.value}
                       </div>
                     )}
@@ -128,9 +127,7 @@ export default function DashboardAdmin() {
             <Card className='col-span-1 lg:col-span-3'>
               <CardHeader>
                 <CardTitle>Recent Commands</CardTitle>
-                <CardDescription>
-                  Your latest saved commands
-                </CardDescription>
+                <CardDescription>Your latest saved commands</CardDescription>
               </CardHeader>
               <CardContent>
                 <RecentSales />

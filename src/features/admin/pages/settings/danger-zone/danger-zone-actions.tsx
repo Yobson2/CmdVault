@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useNavigate } from '@tanstack/react-router'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { toast } from 'sonner'
+import { useNavigate } from '@tanstack/react-router'
 import { IconAlertTriangle } from '@tabler/icons-react'
-import { supabase } from '@/lib/supabase'
+import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/authStore'
+import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/confirm-dialog'
 
@@ -49,7 +49,9 @@ export default function DangerZoneActions() {
       await supabase.from('profiles').delete().eq('id', userId)
 
       // Toast before sign-out since the component will unmount
-      toast.success('Account data deleted. Your auth record will be queued for removal.')
+      toast.success(
+        'Account data deleted. Your auth record will be queued for removal.'
+      )
 
       await signOut()
       navigate({ to: '/sign-in' })
@@ -62,7 +64,7 @@ export default function DangerZoneActions() {
   return (
     <div className='space-y-6'>
       {/* Delete All Commands */}
-      <div className='rounded-lg border border-destructive/50 p-4'>
+      <div className='border-destructive/50 rounded-lg border p-4'>
         <div className='flex items-start gap-3'>
           <IconAlertTriangle className='text-destructive mt-0.5 h-5 w-5 shrink-0' />
           <div className='flex-1 space-y-2'>
@@ -83,15 +85,15 @@ export default function DangerZoneActions() {
       </div>
 
       {/* Delete Account */}
-      <div className='rounded-lg border border-destructive/50 p-4'>
+      <div className='border-destructive/50 rounded-lg border p-4'>
         <div className='flex items-start gap-3'>
           <IconAlertTriangle className='text-destructive mt-0.5 h-5 w-5 shrink-0' />
           <div className='flex-1 space-y-2'>
             <h4 className='font-medium'>Delete Account</h4>
             <p className='text-muted-foreground text-sm'>
               Permanently delete your account data including all commands,
-              profile, and team memberships. Your auth record will be queued
-              for removal. This action cannot be undone.
+              profile, and team memberships. Your auth record will be queued for
+              removal. This action cannot be undone.
             </p>
             <Button
               variant='destructive'

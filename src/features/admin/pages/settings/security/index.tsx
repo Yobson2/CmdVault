@@ -3,10 +3,7 @@ import SecurityForm from './security-form'
 
 export default function SettingsSecurity() {
   return (
-    <ContentSection
-      title='Security'
-      desc='Change your account password.'
-    >
+    <ContentSection title='Security' desc='Change your account password.'>
       <SecurityForm />
     </ContentSection>
   )

@@ -1,8 +1,4 @@
 import { useRef } from 'react'
-import Layout from '@/components/layout/landing-page-layout'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { useScrollAnimations } from '@/hooks/use-scroll-animations'
 import { Link } from '@tanstack/react-router'
 import {
   IconTerminal2,
@@ -18,6 +14,10 @@ import {
   IconUpload,
   IconShieldCheck,
 } from '@tabler/icons-react'
+import { useScrollAnimations } from '@/hooks/use-scroll-animations'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import Layout from '@/components/layout/landing-page-layout'
 
 const features = [
   {
@@ -51,13 +51,15 @@ const steps = [
     icon: IconTags,
     step: '2',
     title: 'Organize with Tags',
-    description: 'Tag commands by language, project, or purpose for easy lookup.',
+    description:
+      'Tag commands by language, project, or purpose for easy lookup.',
   },
   {
     icon: IconRefresh,
     step: '3',
     title: 'Reuse Anywhere',
-    description: 'Find and copy your commands in seconds whenever you need them.',
+    description:
+      'Find and copy your commands in seconds whenever you need them.',
   },
 ]
 
@@ -126,7 +128,7 @@ export function HomePage() {
         <section className='relative flex min-h-[90vh] items-center bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900'>
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_60%)]'></div>
 
-          <div className='container relative z-10 mx-auto px-4'>
+          <div className='relative z-10 container mx-auto px-4'>
             <div className='mx-auto max-w-3xl text-center text-white'>
               <div
                 data-animate='hero-badge'
@@ -138,7 +140,7 @@ export function HomePage() {
 
               <h1
                 data-animate='hero-heading'
-                className='mb-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl'
+                className='mb-6 text-5xl leading-tight font-bold md:text-6xl lg:text-7xl'
               >
                 Your Command{' '}
                 <span className='bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent'>
@@ -265,7 +267,7 @@ export function HomePage() {
         >
           <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(6,182,212,0.1),transparent_50%)]' />
 
-          <div className='container relative z-10 mx-auto px-4'>
+          <div className='relative z-10 container mx-auto px-4'>
             {/* Header */}
             <div className='mb-6 text-center' data-animate='fade-up'>
               <div className='mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-300'>
@@ -273,7 +275,10 @@ export function HomePage() {
                 Community
               </div>
             </div>
-            <div className='mx-auto mb-16 max-w-2xl text-center' data-animate='fade-up'>
+            <div
+              className='mx-auto mb-16 max-w-2xl text-center'
+              data-animate='fade-up'
+            >
               <h2 className='mb-4 text-4xl font-bold text-white md:text-5xl'>
                 Shared by Developers,{' '}
                 <span className='bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent'>
@@ -311,7 +316,7 @@ export function HomePage() {
 
                   {/* Command */}
                   <div className='relative mb-3 rounded-lg bg-slate-950/60 p-3'>
-                    <code className='block overflow-x-auto text-[13px] leading-relaxed text-cyan-200 scrollbar-thin'>
+                    <code className='scrollbar-thin block overflow-x-auto text-[13px] leading-relaxed text-cyan-200'>
                       {cmd.command}
                     </code>
                     <button
@@ -333,7 +338,9 @@ export function HomePage() {
                     <div className='flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-indigo-600 text-[10px] font-bold text-white'>
                       {cmd.author[0].toUpperCase()}
                     </div>
-                    <span className='text-xs text-indigo-300'>@{cmd.author}</span>
+                    <span className='text-xs text-indigo-300'>
+                      @{cmd.author}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -406,7 +413,10 @@ export function HomePage() {
 
         {/* CTA Section */}
         <section className='bg-gradient-to-r from-indigo-950 to-slate-900 py-20 text-white'>
-          <div className='container mx-auto px-4 text-center' data-animate='fade-up'>
+          <div
+            className='container mx-auto px-4 text-center'
+            data-animate='fade-up'
+          >
             <h2 className='mb-6 text-4xl font-bold md:text-5xl'>
               Start Building Your Vault
             </h2>

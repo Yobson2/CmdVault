@@ -1,13 +1,13 @@
 // import React from "react"
-import { Button } from "@/components/ui/button"
-import { 
-  IconChevronLeft, 
+import {
+  IconChevronLeft,
   IconChevronRight,
   IconChevronsLeft,
-  IconChevronsRight
-} from "@tabler/icons-react"
+  IconChevronsRight,
+} from '@tabler/icons-react'
 // import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 
 interface TablePaginationProps {
   pageIndex: number
@@ -22,56 +22,51 @@ export function TablePagination({
   // pageSize,
   pageCount,
   onPageChange,
-  className
+  className,
 }: TablePaginationProps) {
   return (
-    <div 
-      className={cn(
-        "flex items-center justify-between px-2",
-        className
-      )}
-    >
-      <div className="text-sm text-muted-foreground">
+    <div className={cn('flex items-center justify-between px-2', className)}>
+      <div className='text-muted-foreground text-sm'>
         Page {pageIndex + 1} of {pageCount}
       </div>
-      <div className="flex items-center space-x-2">
+      <div className='flex items-center space-x-2'>
         <Button
-          variant="outline"
-          size="icon"
+          variant='outline'
+          size='icon'
           onClick={() => onPageChange(0)}
           disabled={pageIndex === 0}
-          className="h-8 w-8"
+          className='h-8 w-8'
         >
-          <IconChevronsLeft className="h-4 w-4" />
+          <IconChevronsLeft className='h-4 w-4' />
         </Button>
         <Button
-          variant="outline"
-          size="icon"
+          variant='outline'
+          size='icon'
           onClick={() => onPageChange(pageIndex - 1)}
           disabled={pageIndex === 0}
-          className="h-8 w-8"
+          className='h-8 w-8'
         >
-          <IconChevronLeft className="h-4 w-4" />
+          <IconChevronLeft className='h-4 w-4' />
         </Button>
         <Button
-          variant="outline"
-          size="icon"
+          variant='outline'
+          size='icon'
           onClick={() => onPageChange(pageIndex + 1)}
           disabled={pageIndex === pageCount - 1}
-          className="h-8 w-8"
+          className='h-8 w-8'
         >
-          <IconChevronRight className="h-4 w-4" />
+          <IconChevronRight className='h-4 w-4' />
         </Button>
         <Button
-          variant="outline"
-          size="icon"
+          variant='outline'
+          size='icon'
           onClick={() => onPageChange(pageCount - 1)}
           disabled={pageIndex === pageCount - 1}
-          className="h-8 w-8"
+          className='h-8 w-8'
         >
-          <IconChevronsRight className="h-4 w-4" />
+          <IconChevronsRight className='h-4 w-4' />
         </Button>
       </div>
     </div>
   )
-} 
+}

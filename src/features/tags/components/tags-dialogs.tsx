@@ -54,8 +54,8 @@ export function TagsDialogs() {
             title='Delete this tag?'
             desc={
               <>
-                You are about to delete{' '}
-                <strong>{currentRow.name}</strong>. <br />
+                You are about to delete <strong>{currentRow.name}</strong>.{' '}
+                <br />
                 This will remove it from all commands. This action cannot be
                 undone.
               </>

@@ -1,4 +1,13 @@
-import React from "react"
+import React from 'react'
+import { IconDotsVertical } from '@tabler/icons-react'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import {
   Table,
   TableBody,
@@ -6,19 +15,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import { IconDotsVertical } from '@tabler/icons-react'
-import { cn } from "@/lib/utils"
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
-} from "@/components/ui/dropdown-menu"
-
-import { TablePagination } from "./table-pagination"
-import { TableToolbar } from "./table-toolbar"
+} from '@/components/ui/table'
+import { TablePagination } from './table-pagination'
+import { TableToolbar } from './table-toolbar'
 
 export interface ColumnDef<T> {
   id: string
@@ -40,7 +39,7 @@ export interface DataTableProps<T> {
   className?: string
   onSearch?: (value: string) => void
   onRowAction?: (action: string, row: T) => void
-  rowActions?: { label: string, value: string }[]
+  rowActions?: { label: string; value: string }[]
   pagination?: {
     pageIndex: number
     pageSize: number
@@ -54,15 +53,15 @@ export function DataTable<T extends Record<string, any>>({
   data,
   title,
   subtitle,
-  searchPlaceholder = "Search...",
+  searchPlaceholder = 'Search...',
   className,
   onSearch,
   onRowAction,
   rowActions,
-  pagination
+  pagination,
 }: DataTableProps<T>) {
   return (
-    <div className={cn("space-y-4", className)}>
+    <div className={cn('space-y-4', className)}>
       {/* Header with title and search */}
       {(title || onSearch) && (
         <TableToolbar
@@ -74,24 +73,22 @@ export function DataTable<T extends Record<string, any>>({
       )}
 
       {/* Table */}
-      <div className="rounded-md border">
+      <div className='rounded-md border'>
         <Table>
           <TableHeader>
-            <TableRow className="bg-gray-50 hover:bg-gray-50">
+            <TableRow className='bg-gray-50 hover:bg-gray-50'>
               {columns.map((column) => (
-                <TableHead 
+                <TableHead
                   key={column.id}
                   className={cn(
-                    "py-3 text-xs font-medium uppercase text-gray-600",
+                    'py-3 text-xs font-medium text-gray-600 uppercase',
                     column.meta?.className
                   )}
                 >
                   {column.header}
                 </TableHead>
               ))}
-              {rowActions && (
-                <TableHead className="w-[60px]"></TableHead>
-              )}
+              {rowActions && <TableHead className='w-[60px]'></TableHead>}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -99,41 +96,39 @@ export function DataTable<T extends Record<string, any>>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length + (rowActions ? 1 : 0)}
-                  className="h-24 text-center text-muted-foreground"
+                  className='text-muted-foreground h-24 text-center'
                 >
                   No results.
                 </TableCell>
               </TableRow>
             ) : (
               data.map((row, i) => (
-                <TableRow key={i} className="hover:bg-gray-50/50">
+                <TableRow key={i} className='hover:bg-gray-50/50'>
                   {columns.map((column) => (
                     <TableCell
                       key={column.id}
                       className={cn(column.meta?.className)}
                     >
-                      {column.cell
-                        ? column.cell(row)
-                        : row[column.accessorKey]}
+                      {column.cell ? column.cell(row) : row[column.accessorKey]}
                     </TableCell>
                   ))}
                   {rowActions && (
-                    <TableCell className="p-2 text-right">
+                    <TableCell className='p-2 text-right'>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button
-                            variant="ghost"
-                            size="sm"
-                            className="h-8 w-8 p-0"
+                            variant='ghost'
+                            size='sm'
+                            className='h-8 w-8 p-0'
                           >
-                            <IconDotsVertical className="h-4 w-4" />
+                            <IconDotsVertical className='h-4 w-4' />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
+                        <DropdownMenuContent align='end'>
                           {rowActions.map((action) => (
                             <DropdownMenuItem
                               key={action.value}
-                              onClick={() => 
+                              onClick={() =>
                                 onRowAction && onRowAction(action.value, row)
                               }
                             >
@@ -162,4 +157,4 @@ export function DataTable<T extends Record<string, any>>({
       )}
     </div>
   )
-} 
+}

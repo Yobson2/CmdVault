@@ -1,12 +1,12 @@
 import React from 'react'
 import { useLocation } from '@tanstack/react-router'
-import { Sidebar } from './sidebar'
-import { Header } from './header'
-import { Main } from './main'
+import { cn } from '@/lib/utils'
+import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
-import { ProfileDropdown } from '@/components/profile-dropdown'
-import { cn } from '@/lib/utils'
+import { Header } from './header'
+import { Main } from './main'
+import { Sidebar } from './sidebar'
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -18,10 +18,10 @@ export function DashboardLayout({ children, className }: DashboardLayoutProps) {
   const currentPath = location.pathname
 
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <div className='flex h-screen w-full overflow-hidden'>
       <Sidebar activePath={currentPath} />
-      
-      <div className="flex flex-1 flex-col overflow-hidden">
+
+      <div className='flex flex-1 flex-col overflow-hidden'>
         <Header>
           <Search />
           <div className='ml-auto flex items-center space-x-4'>
@@ -29,11 +29,11 @@ export function DashboardLayout({ children, className }: DashboardLayoutProps) {
             <ProfileDropdown />
           </div>
         </Header>
-        
-        <Main className={cn("flex-1 overflow-auto", className)}>
+
+        <Main className={cn('flex-1 overflow-auto', className)}>
           {children}
         </Main>
       </div>
     </div>
   )
-} 
+}

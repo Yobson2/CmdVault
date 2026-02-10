@@ -84,8 +84,8 @@ export function TagsMutateDrawer({ open, onOpenChange, currentRow }: Props) {
           <SheetDescription>
             {isUpdate
               ? 'Update the tag details below.'
-              : 'Create a new tag to organize your commands.'}
-            {' '}Click save when you&apos;re done.
+              : 'Create a new tag to organize your commands.'}{' '}
+            Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader>
         <Form {...form}>
@@ -122,7 +122,7 @@ export function TagsMutateDrawer({ open, onOpenChange, currentRow }: Props) {
                           className={cn(
                             'h-8 w-8 rounded-full border-2 transition-all',
                             field.value === color
-                              ? 'scale-110 border-foreground'
+                              ? 'border-foreground scale-110'
                               : 'border-transparent hover:scale-105'
                           )}
                           style={{ backgroundColor: color }}

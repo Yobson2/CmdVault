@@ -15,8 +15,8 @@ function JoinPage() {
             Join Our Association
           </h1>
           <p className='mx-auto max-w-2xl text-lg text-gray-600'>
-            Become a member and be part of a vibrant community dedicated to student success,
-            leadership development, and positive change.
+            Become a member and be part of a vibrant community dedicated to
+            student success, leadership development, and positive change.
           </p>
         </div>
 
@@ -38,7 +38,9 @@ function JoinPage() {
                 />
               </svg>
             </div>
-            <h3 className='mb-2 text-lg font-semibold text-gray-900'>Networking</h3>
+            <h3 className='mb-2 text-lg font-semibold text-gray-900'>
+              Networking
+            </h3>
             <p className='text-sm text-gray-600'>
               Connect with like-minded students and build lasting relationships
             </p>
@@ -60,7 +62,9 @@ function JoinPage() {
                 />
               </svg>
             </div>
-            <h3 className='mb-2 text-lg font-semibold text-gray-900'>Leadership</h3>
+            <h3 className='mb-2 text-lg font-semibold text-gray-900'>
+              Leadership
+            </h3>
             <p className='text-sm text-gray-600'>
               Develop leadership skills through hands-on experience and training
             </p>
@@ -92,10 +96,13 @@ function JoinPage() {
         {/* Membership Form */}
         <div className='rounded-xl bg-white p-8 shadow-lg ring-1 ring-gray-200'>
           <div className='mb-6'>
-            <h2 className='text-2xl font-bold text-gray-900'>Membership Application</h2>
+            <h2 className='text-2xl font-bold text-gray-900'>
+              Membership Application
+            </h2>
             <p className='mt-2 text-sm text-gray-600'>
-              Fill out the form below to submit your membership request. We'll review your
-              application and get back to you within 3-5 business days.
+              Fill out the form below to submit your membership request. We'll
+              review your application and get back to you within 3-5 business
+              days.
             </p>
           </div>
           <MembershipForm />
@@ -105,11 +112,17 @@ function JoinPage() {
         <div className='mt-12 text-center'>
           <p className='text-sm text-gray-600'>
             Have questions?{' '}
-            <a href='/contact' className='font-medium text-blue-600 hover:text-blue-500'>
+            <a
+              href='/contact'
+              className='font-medium text-blue-600 hover:text-blue-500'
+            >
               Contact us
             </a>{' '}
             or check out our{' '}
-            <a href='/faq' className='font-medium text-blue-600 hover:text-blue-500'>
+            <a
+              href='/faq'
+              className='font-medium text-blue-600 hover:text-blue-500'
+            >
               FAQ page
             </a>
           </p>

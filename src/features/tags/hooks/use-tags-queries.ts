@@ -1,16 +1,12 @@
-import {
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
+import type { TagForm } from '../data/schema'
 import {
   getTagsWithCount,
   createTag,
   updateTag,
   deleteTag,
 } from '../services/tags-service'
-import type { TagForm } from '../data/schema'
 
 export const tagKeys = {
   all: ['tags'] as const,

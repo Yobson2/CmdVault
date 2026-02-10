@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button'
 import { Link } from '@tanstack/react-router'
-import Layout from '@/components/layout/landing-page-layout'
 import {
   IconTerminal2,
   IconUsers,
   IconWorldSearch,
   IconStar,
 } from '@tabler/icons-react'
+import { Button } from '@/components/ui/button'
+import Layout from '@/components/layout/landing-page-layout'
 
 const About = () => {
   const timeline = [
@@ -46,8 +46,7 @@ const About = () => {
     {
       icon: IconStar,
       title: 'Favorite',
-      description:
-        'Star the commands you use most for instant access.',
+      description: 'Star the commands you use most for instant access.',
     },
     {
       icon: IconWorldSearch,
@@ -58,8 +57,7 @@ const About = () => {
     {
       icon: IconUsers,
       title: 'Collaborate',
-      description:
-        'Share commands with your team. Stop reinventing the wheel.',
+      description: 'Share commands with your team. Stop reinventing the wheel.',
     },
   ]
 
@@ -67,7 +65,7 @@ const About = () => {
     <Layout>
       {/* Hero section */}
       <div className='relative flex min-h-[40vh] items-center justify-center bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900'>
-        <div className='container z-10 mx-auto px-4 py-16 text-center'>
+        <div className='z-10 container mx-auto px-4 py-16 text-center'>
           <h1 className='mb-4 text-4xl font-bold text-white md:text-5xl'>
             About CmdVault
           </h1>
@@ -82,9 +80,7 @@ const About = () => {
       <section className='py-16'>
         <div className='container mx-auto px-4'>
           <div className='mx-auto max-w-3xl'>
-            <h2 className='mb-6 text-center text-3xl font-bold'>
-              Our Mission
-            </h2>
+            <h2 className='mb-6 text-center text-3xl font-bold'>Our Mission</h2>
             <p className='mb-8 text-center text-lg'>
               Help developers stop losing useful commands and start building a
               shared library of proven solutions.
@@ -99,9 +95,7 @@ const About = () => {
                       <Icon className='h-6 w-6 text-white' />
                     </div>
                     <div>
-                      <h3 className='text-lg font-semibold'>
-                        {feature.title}
-                      </h3>
+                      <h3 className='text-lg font-semibold'>{feature.title}</h3>
                       <p className='text-muted-foreground'>
                         {feature.description}
                       </p>

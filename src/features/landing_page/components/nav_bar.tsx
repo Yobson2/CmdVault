@@ -1,13 +1,13 @@
-import { Button } from '@/components/ui/button'
+import { useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { IconTerminal2 } from '@tabler/icons-react'
-import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className='fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md'>
+    <header className='fixed top-0 right-0 left-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md'>
       <div className='container mx-auto flex items-center justify-between px-4 py-4'>
         {/* Logo */}
         <Link
@@ -92,7 +92,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className='absolute top-full left-0 right-0 border-t border-gray-200 bg-white shadow-lg md:hidden'>
+          <div className='absolute top-full right-0 left-0 border-t border-gray-200 bg-white shadow-lg md:hidden'>
             <nav className='space-y-1 px-4 py-4'>
               <a
                 href='#features'

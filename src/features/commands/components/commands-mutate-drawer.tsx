@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckIcon, PlusCircledIcon } from '@radix-ui/react-icons'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { cn } from '@/lib/utils'
+import { useCommandDefaults } from '@/hooks/use-command-defaults'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -39,11 +40,17 @@ import {
 } from '@/components/ui/sheet'
 import { Textarea } from '@/components/ui/textarea'
 import { SelectDropdown } from '@/components/select-dropdown'
-import { Command, commandFormSchema, type CommandForm } from '../data/schema'
-import { useCommandDefaults } from '@/hooks/use-command-defaults'
 import { languages, categories } from '../data/data'
-import { useCreateCommand, useUpdateCommand } from '../hooks/use-commands-queries'
-import { useTagsQuery, useCreateTag, useSetCommandTags } from '../hooks/use-tags-queries'
+import { Command, commandFormSchema, type CommandForm } from '../data/schema'
+import {
+  useCreateCommand,
+  useUpdateCommand,
+} from '../hooks/use-commands-queries'
+import {
+  useTagsQuery,
+  useCreateTag,
+  useSetCommandTags,
+} from '../hooks/use-tags-queries'
 
 interface Props {
   open: boolean
@@ -66,9 +73,7 @@ export function CommandsMutateDrawer({
   const [newTagName, setNewTagName] = useState('')
 
   const existingTagIds =
-    currentRow?.command_tags
-      ?.map((ct) => ct.tag_id)
-      .filter(Boolean) ?? []
+    currentRow?.command_tags?.map((ct) => ct.tag_id).filter(Boolean) ?? []
 
   const form = useForm<CommandForm>({
     resolver: zodResolver(commandFormSchema),
@@ -157,8 +162,8 @@ export function CommandsMutateDrawer({
           <SheetDescription>
             {isUpdate
               ? 'Update the command details below.'
-              : 'Add a new command to your vault.'}
-            {' '}Click save when you&apos;re done.
+              : 'Add a new command to your vault.'}{' '}
+            Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader>
         <Form {...form}>

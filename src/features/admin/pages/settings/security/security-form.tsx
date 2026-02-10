@@ -65,7 +65,11 @@ export default function SecurityForm() {
             <FormItem>
               <FormLabel>New Password</FormLabel>
               <FormControl>
-                <Input type='password' placeholder='Enter new password' {...field} />
+                <Input
+                  type='password'
+                  placeholder='Enter new password'
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

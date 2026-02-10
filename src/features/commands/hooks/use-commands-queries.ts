@@ -1,10 +1,7 @@
-import {
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/authStore'
+import type { CommandForm } from '../data/schema'
 import {
   getCommands,
   createCommand,
@@ -14,7 +11,6 @@ import {
   incrementUsageCount,
   type CommandFilters,
 } from '../services/commands-service'
-import type { CommandForm } from '../data/schema'
 
 export const commandKeys = {
   all: ['commands'] as const,
@@ -32,7 +28,9 @@ export function useCommandsQuery(filters?: CommandFilters) {
   })
 }
 
-function invalidateCommandRelated(queryClient: ReturnType<typeof useQueryClient>) {
+function invalidateCommandRelated(
+  queryClient: ReturnType<typeof useQueryClient>
+) {
   queryClient.invalidateQueries({ queryKey: commandKeys.lists() })
   queryClient.invalidateQueries({ queryKey: ['dashboard'] })
   queryClient.invalidateQueries({ queryKey: ['explore'] })
@@ -92,13 +90,8 @@ export function useToggleFavorite() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: ({
-      id,
-      isFavorite,
-    }: {
-      id: string
-      isFavorite: boolean
-    }) => toggleFavorite(id, isFavorite),
+    mutationFn: ({ id, isFavorite }: { id: string; isFavorite: boolean }) =>
+      toggleFavorite(id, isFavorite),
     onSuccess: (_data, variables) => {
       invalidateCommandRelated(queryClient)
       toast.success(

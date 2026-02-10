@@ -1,8 +1,8 @@
 import { ConfirmDialog } from '@/components/confirm-dialog'
 import { useTeams } from '../context/teams-context'
 import { useDeleteTeam } from '../hooks/use-teams-queries'
-import { TeamsMutateDrawer } from './teams-mutate-drawer'
 import { MembersDrawer } from './members-drawer'
+import { TeamsMutateDrawer } from './teams-mutate-drawer'
 
 export function TeamsDialogs() {
   const { open, setOpen, currentRow, setCurrentRow } = useTeams()
@@ -67,8 +67,8 @@ export function TeamsDialogs() {
             title='Delete this team?'
             desc={
               <>
-                You are about to delete{' '}
-                <strong>{currentRow.name}</strong>. <br />
+                You are about to delete <strong>{currentRow.name}</strong>.{' '}
+                <br />
                 All members will be removed. This action cannot be undone.
               </>
             }

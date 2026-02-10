@@ -1,16 +1,16 @@
 import {
+  IconTerminal2,
+  IconStar,
+  IconWorldSearch,
+  IconUsersGroup,
+} from '@tabler/icons-react'
+import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import {
-  IconTerminal2,
-  IconStar,
-  IconWorldSearch,
-  IconUsersGroup,
-} from '@tabler/icons-react'
 
 const services = [
   {

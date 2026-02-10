@@ -1,5 +1,5 @@
-import { IconCopy, IconTerminal2 } from '@tabler/icons-react'
 import { ColumnDef } from '@tanstack/react-table'
+import { IconCopy, IconTerminal2 } from '@tabler/icons-react'
 import { toast } from 'sonner'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -45,9 +45,7 @@ export const columns: ColumnDef<Command>[] = [
       <DataTableColumnHeader column={column} title='Title' />
     ),
     cell: ({ row }) => {
-      const category = categories.find(
-        (c) => c.value === row.original.category
-      )
+      const category = categories.find((c) => c.value === row.original.category)
       const commandTags = row.original.command_tags ?? []
       return (
         <div className='flex flex-col gap-1'>
@@ -99,10 +97,7 @@ export const columns: ColumnDef<Command>[] = [
               type='button'
               className='inline-flex max-w-[220px] items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-2 py-1 text-left font-mono text-xs text-green-400 transition-colors hover:border-zinc-500 dark:border-zinc-600 dark:bg-zinc-950'
             >
-              <IconTerminal2
-                size={12}
-                className='shrink-0 text-zinc-500'
-              />
+              <IconTerminal2 size={12} className='shrink-0 text-zinc-500' />
               <span className='truncate'>{text}</span>
             </button>
           </PopoverTrigger>
@@ -129,7 +124,7 @@ export const columns: ColumnDef<Command>[] = [
               </Button>
             </div>
             <div className='max-h-[200px] overflow-auto p-3'>
-              <code className='block whitespace-pre-wrap break-all font-mono text-[13px] leading-relaxed text-green-400'>
+              <code className='block font-mono text-[13px] leading-relaxed break-all whitespace-pre-wrap text-green-400'>
                 <span className='text-zinc-500 select-none'>$ </span>
                 {text}
               </code>

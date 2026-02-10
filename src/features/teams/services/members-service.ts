@@ -1,5 +1,5 @@
-import { supabase } from '@/lib/supabase'
 import type { Insertable, Updatable } from '@/types/database.types'
+import { supabase } from '@/lib/supabase'
 
 export async function getTeamMembers(teamId: string) {
   const { data, error } = await supabase

@@ -1,22 +1,16 @@
-import { supabase } from '@/lib/supabase'
 import type { Database, Insertable } from '@/types/database.types'
+import { supabase } from '@/lib/supabase'
 
 type TagRow = Database['public']['Tables']['tags']['Row']
 
 export async function getTags(): Promise<TagRow[]> {
-  const { data, error } = await supabase
-    .from('tags')
-    .select('*')
-    .order('name')
+  const { data, error } = await supabase.from('tags').select('*').order('name')
 
   if (error) throw error
   return data as TagRow[]
 }
 
-export async function createTag(
-  name: string,
-  color?: string
-): Promise<TagRow> {
+export async function createTag(name: string, color?: string): Promise<TagRow> {
   const insertData: Insertable<'tags'> = { name, color: color ?? null }
 
   const { data, error } = await supabase

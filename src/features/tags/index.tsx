@@ -8,15 +8,15 @@ import { DataTable } from './components/data-table'
 import { TagsDialogs } from './components/tags-dialogs'
 import { TagsPrimaryButtons } from './components/tags-primary-buttons'
 import TagsProvider from './context/tags-context'
-import { useTagsWithCountQuery } from './hooks/use-tags-queries'
 import type { Tag } from './data/schema'
+import { useTagsWithCountQuery } from './hooks/use-tags-queries'
 
 export default function Tags() {
   const { data: tags, isLoading } = useTagsWithCountQuery()
 
   return (
     <TagsProvider>
-      <Header fixed className='border-b border-border bg-background'>
+      <Header fixed className='border-border bg-background border-b'>
         <div className='flex items-center gap-2'>
           <h1 className='text-lg font-semibold'>Tags</h1>
         </div>

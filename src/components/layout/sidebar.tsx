@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from '@tanstack/react-router'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 import {
   IconTerminal2,
   IconStar,
@@ -12,6 +10,8 @@ import {
   IconLogout,
   IconLayoutDashboard,
 } from '@tabler/icons-react'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 
 interface SidebarItemProps {
   href: string
@@ -31,9 +31,7 @@ function SidebarItem({ href, icon, label, active }: SidebarItemProps) {
           : 'text-muted-foreground hover:bg-muted hover:text-foreground'
       )}
     >
-      <span className='flex h-5 w-5 items-center justify-center'>
-        {icon}
-      </span>
+      <span className='flex h-5 w-5 items-center justify-center'>{icon}</span>
       <span>{label}</span>
     </Link>
   )

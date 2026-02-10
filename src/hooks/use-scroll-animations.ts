@@ -1,7 +1,7 @@
+import type { RefObject } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import type { RefObject } from 'react'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -38,8 +38,9 @@ export function useScrollAnimations({ containerRef }: ScrollAnimationOptions) {
       }
 
       // --- Scroll-triggered fade-up for individual elements ---
-      const fadeUpElements =
-        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]')
+      const fadeUpElements = gsap.utils.toArray<HTMLElement>(
+        '[data-animate="fade-up"]'
+      )
       fadeUpElements.forEach((el) => {
         gsap.set(el, { y: DEFAULTS.y, opacity: 0 })
         gsap.to(el, {
@@ -57,9 +58,7 @@ export function useScrollAnimations({ containerRef }: ScrollAnimationOptions) {
 
       // --- Scroll-triggered stagger for grouped elements ---
       const groups = new Map<string, HTMLElement[]>()
-      const groupItems = gsap.utils.toArray<HTMLElement>(
-        '[data-animate-group]'
-      )
+      const groupItems = gsap.utils.toArray<HTMLElement>('[data-animate-group]')
       groupItems.forEach((el) => {
         const group = el.getAttribute('data-animate-group')!
         if (!groups.has(group)) groups.set(group, [])

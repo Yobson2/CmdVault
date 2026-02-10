@@ -1,6 +1,6 @@
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 
 interface PromotionalCardProps {
   title: string
@@ -21,33 +21,30 @@ export function PromotionalCard({
   className,
   bgColor = '#1e293b',
   textColor = 'white',
-  buttonVariant = 'default'
+  buttonVariant = 'default',
 }: PromotionalCardProps) {
   return (
-    <Card 
-      className={cn(
-        "overflow-hidden border-0",
-        className
-      )}
-      style={{ 
+    <Card
+      className={cn('overflow-hidden border-0', className)}
+      style={{
         backgroundColor: bgColor,
-        color: textColor
+        color: textColor,
       }}
     >
-      <CardContent className="flex flex-col items-start justify-between space-y-4 p-6">
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold">{title}</h3>
-          <p className="text-sm opacity-90">{description}</p>
+      <CardContent className='flex flex-col items-start justify-between space-y-4 p-6'>
+        <div className='space-y-2'>
+          <h3 className='text-lg font-semibold'>{title}</h3>
+          <p className='text-sm opacity-90'>{description}</p>
         </div>
-        
-        <Button 
-          variant={buttonVariant} 
+
+        <Button
+          variant={buttonVariant}
           onClick={onButtonClick}
-          className="mt-4 bg-yellow-400 text-gray-900 hover:bg-yellow-500"
+          className='mt-4 bg-yellow-400 text-gray-900 hover:bg-yellow-500'
         >
           {buttonText}
         </Button>
       </CardContent>
     </Card>
   )
-} 
+}

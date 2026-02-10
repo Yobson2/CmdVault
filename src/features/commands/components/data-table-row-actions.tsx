@@ -12,11 +12,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { useCommands } from '../context/commands-context'
+import { commandSchema } from '../data/schema'
 import {
   useToggleFavorite,
   useIncrementUsage,
 } from '../hooks/use-commands-queries'
-import { commandSchema } from '../data/schema'
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>

@@ -1,35 +1,15 @@
-// import { QueryClient } from '@tanstack/react-query'
-// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-// import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import * as React from 'react'
+import { Outlet, createRootRoute } from '@tanstack/react-router'
 
-import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'
-import { Toaster } from '@/components/ui/sonner'
-import { NavigationProgress } from '@/components/navigation-progress'
-import GeneralError from '@/features/errors/general-error'
-import NotFoundError from '@/features/errors/not-found-error'
-
-// Définissez le contexte que les routes enfants peuvent accéder
-interface MyRouterContext {
-  // queryClient: QueryClient
-  // auth: AuthContextType 
-}
-
-export const Route = createRootRouteWithContext<MyRouterContext>()({
-  component: () => {
-    return (
-      <>
-        <NavigationProgress />
-        <Outlet />
-        <Toaster duration={50000} />
-        {import.meta.env.MODE === 'development' && (
-          <>
-            {/* <ReactQueryDevtools buttonPosition='bottom-left' /> */}
-            {/* <TanStackRouterDevtools position='bottom-right' /> */}
-          </>
-        )}
-      </>
-    )
-  },
-  notFoundComponent: NotFoundError,
-  errorComponent: GeneralError,
+export const Route = createRootRoute({
+  component: RootComponent,
 })
+
+function RootComponent() {
+  return (
+    <React.Fragment>
+      <div>Hello "__root"!</div>
+      <Outlet />
+    </React.Fragment>
+  )
+}

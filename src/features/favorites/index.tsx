@@ -4,11 +4,11 @@ import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { columns } from '@/features/commands/components/columns'
-import { DataTable } from '@/features/commands/components/data-table'
 import { CommandsDialogs } from '@/features/commands/components/commands-dialogs'
+import { DataTable } from '@/features/commands/components/data-table'
 import CommandsProvider from '@/features/commands/context/commands-context'
-import { useCommandsQuery } from '@/features/commands/hooks/use-commands-queries'
 import type { Command } from '@/features/commands/data/schema'
+import { useCommandsQuery } from '@/features/commands/hooks/use-commands-queries'
 
 export default function Favorites() {
   const { data: favorites, isLoading } = useCommandsQuery({ is_favorite: true })
@@ -17,7 +17,7 @@ export default function Favorites() {
 
   return (
     <CommandsProvider>
-      <Header fixed className='border-b border-border bg-background'>
+      <Header fixed className='border-border bg-background border-b'>
         <div className='flex items-center gap-2'>
           <h1 className='text-lg font-semibold'>Favorites</h1>
         </div>
@@ -32,7 +32,8 @@ export default function Favorites() {
           <div>
             <p className='text-muted-foreground'>
               Your favorite commands for quick access.
-              {!isLoading && ` ${favoritesList.length} command${favoritesList.length !== 1 ? 's' : ''} saved.`}
+              {!isLoading &&
+                ` ${favoritesList.length} command${favoritesList.length !== 1 ? 's' : ''} saved.`}
             </p>
           </div>
         </div>

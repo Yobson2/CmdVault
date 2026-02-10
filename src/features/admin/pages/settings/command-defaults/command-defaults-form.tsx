@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
+import { useCommandDefaults } from '@/hooks/use-command-defaults'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -12,8 +13,11 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { SelectDropdown } from '@/components/select-dropdown'
-import { useCommandDefaults } from '@/hooks/use-command-defaults'
-import { languages, categories, visibilities } from '@/features/commands/data/data'
+import {
+  languages,
+  categories,
+  visibilities,
+} from '@/features/commands/data/data'
 
 const schema = z.object({
   language: z.string(),

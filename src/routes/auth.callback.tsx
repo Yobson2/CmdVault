@@ -35,10 +35,8 @@ function AuthCallback() {
   return (
     <div className='flex h-svh items-center justify-center'>
       <div className='flex flex-col items-center gap-4'>
-        <IconLoader2 className='h-8 w-8 animate-spin text-muted-foreground' />
-        <p className='text-muted-foreground text-sm'>
-          Completing sign in...
-        </p>
+        <IconLoader2 className='text-muted-foreground h-8 w-8 animate-spin' />
+        <p className='text-muted-foreground text-sm'>Completing sign in...</p>
       </div>
     </div>
   )

@@ -11,55 +11,55 @@
      BORDER RADIUS SYSTEM
      Use: rounded-sm, rounded-md, rounded-lg, rounded-xl, rounded-2xl
      ======================================== */
-  --radius: 0.625rem;                /* Base radius (10px) */
+  --radius: 0.625rem; /* Base radius (10px) */
 
   /* ========================================
      BASE COLORS
      Use: bg-background, text-foreground
      ======================================== */
-  --background: oklch(1 0 0);        /* Main page background (white) */
-  --foreground: oklch(0.145 0 0);    /* Main text color (black) */
+  --background: oklch(1 0 0); /* Main page background (white) */
+  --foreground: oklch(0.145 0 0); /* Main text color (black) */
 
   /* ========================================
      CARD COLORS
      Use: bg-card, text-card-foreground
      ======================================== */
-  --card: oklch(1 0 0);              /* Card backgrounds */
+  --card: oklch(1 0 0); /* Card backgrounds */
   --card-foreground: oklch(0.145 0 0); /* Text on cards */
 
   /* ========================================
      POPOVER COLORS
      Use: bg-popover, text-popover-foreground
      ======================================== */
-  --popover: oklch(1 0 0);           /* Dropdown/popup backgrounds */
+  --popover: oklch(1 0 0); /* Dropdown/popup backgrounds */
   --popover-foreground: oklch(0.145 0 0); /* Text in dropdowns */
 
   /* ========================================
      PRIMARY COLORS
      Use: bg-primary, text-primary-foreground, hover:bg-primary/90
      ======================================== */
-  --primary: oklch(0.205 0 0);       /* Main action buttons (dark) */
+  --primary: oklch(0.205 0 0); /* Main action buttons (dark) */
   --primary-foreground: oklch(0.985 0 0); /* Text on primary buttons (white) */
 
   /* ========================================
      SECONDARY COLORS
      Use: bg-secondary, text-secondary-foreground
      ======================================== */
-  --secondary: oklch(0.97 0 0);      /* Secondary buttons (light gray) */
+  --secondary: oklch(0.97 0 0); /* Secondary buttons (light gray) */
   --secondary-foreground: oklch(0.205 0 0); /* Text on secondary buttons */
 
   /* ========================================
      MUTED COLORS
      Use: bg-muted, text-muted-foreground
      ======================================== */
-  --muted: oklch(0.97 0 0);          /* Subtle backgrounds (light gray) */
+  --muted: oklch(0.97 0 0); /* Subtle backgrounds (light gray) */
   --muted-foreground: oklch(0.556 0 0); /* Disabled/less important text */
 
   /* ========================================
      ACCENT COLORS
      Use: bg-accent, text-accent-foreground, hover:bg-accent
      ======================================== */
-  --accent: oklch(0.97 0 0);         /* Hover states for items */
+  --accent: oklch(0.97 0 0); /* Hover states for items */
   --accent-foreground: oklch(0.205 0 0); /* Text on accent backgrounds */
 
   /* ========================================
@@ -69,22 +69,22 @@
   --destructive: oklch(0.577 0.245 27.325); /* Error/delete actions (red) */
   --destructive-foreground: oklch(0.985 0 0); /* Text on destructive */
 
-  --success: oklch(0.65 0.19 150);   /* Success states (green) */
+  --success: oklch(0.65 0.19 150); /* Success states (green) */
   --success-foreground: oklch(0.985 0 0); /* Text on success */
 
-  --warning: oklch(0.75 0.15 85);    /* Warning states (yellow/amber) */
+  --warning: oklch(0.75 0.15 85); /* Warning states (yellow/amber) */
   --warning-foreground: oklch(0.145 0 0); /* Text on warning */
 
-  --info: oklch(0.6 0.15 250);       /* Info states (blue) */
+  --info: oklch(0.6 0.15 250); /* Info states (blue) */
   --info-foreground: oklch(0.985 0 0); /* Text on info */
 
   /* ========================================
      BORDER & INPUT COLORS
      Use: border-border, bg-input, ring-ring
      ======================================== */
-  --border: oklch(0.922 0 0);        /* All borders (light gray) */
-  --input: oklch(0.922 0 0);         /* Input field borders */
-  --ring: oklch(0.708 0 0);          /* Focus ring color */
+  --border: oklch(0.922 0 0); /* All borders (light gray) */
+  --input: oklch(0.922 0 0); /* Input field borders */
+  --ring: oklch(0.708 0 0); /* Focus ring color */
 
   /* ========================================
      CHART COLORS
@@ -113,11 +113,11 @@
      BRAND COLORS - Customize These!
      Use: bg-brand, text-brand-foreground, bg-brand-secondary
      ======================================== */
-  --brand: oklch(0.65 0.19 30);      /* Orange accent */
+  --brand: oklch(0.65 0.19 30); /* Orange accent */
   --brand-foreground: oklch(0.985 0 0); /* White text */
-  --brand-secondary: oklch(0.55 0.20 353); /* Red accent */
+  --brand-secondary: oklch(0.55 0.2 353); /* Red accent */
   --brand-secondary-foreground: oklch(0.985 0 0);
-  --brand-dark: oklch(0.35 0.10 212); /* Deep blue */
+  --brand-dark: oklch(0.35 0.1 212); /* Deep blue */
   --brand-dark-foreground: oklch(0.985 0 0);
 
   /* ========================================
@@ -125,15 +125,15 @@
      Use: text-xs, text-sm, text-base, text-lg, etc.
      Already handled by Tailwind, documented here for reference
      ======================================== */
-  --font-size-xs: 0.75rem;           /* 12px */
-  --font-size-sm: 0.875rem;          /* 14px */
-  --font-size-base: 1rem;            /* 16px */
-  --font-size-lg: 1.125rem;          /* 18px */
-  --font-size-xl: 1.25rem;           /* 20px */
-  --font-size-2xl: 1.5rem;           /* 24px */
-  --font-size-3xl: 1.875rem;         /* 30px */
-  --font-size-4xl: 2.25rem;          /* 36px */
-  --font-size-5xl: 3rem;             /* 48px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
 
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
@@ -149,26 +149,29 @@
      Use: p-1, m-2, gap-4, etc. (handled by Tailwind)
      Documented for reference
      ======================================== */
-  --spacing-0: 0;                    /* 0px */
-  --spacing-1: 0.25rem;              /* 4px */
-  --spacing-2: 0.5rem;               /* 8px */
-  --spacing-3: 0.75rem;              /* 12px */
-  --spacing-4: 1rem;                 /* 16px */
-  --spacing-5: 1.25rem;              /* 20px */
-  --spacing-6: 1.5rem;               /* 24px */
-  --spacing-8: 2rem;                 /* 32px */
-  --spacing-10: 2.5rem;              /* 40px */
-  --spacing-12: 3rem;                /* 48px */
-  --spacing-16: 4rem;                /* 64px */
+  --spacing-0: 0; /* 0px */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
 
   /* ========================================
      SHADOW/ELEVATION SYSTEM
      Use: shadow-sm, shadow-md, shadow-lg, etc.
      ======================================== */
   --shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
+  --shadow-md:
+    0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px oklch(0 0 0 / 0.25);
   --shadow-inner: inset 0 2px 4px 0 oklch(0 0 0 / 0.05);
 
@@ -176,10 +179,10 @@
      ANIMATION SYSTEM
      Use with Tailwind: transition, duration-normal, ease-out
      ======================================== */
-  --duration-fast: 150ms;            /* Quick interactions */
-  --duration-normal: 300ms;          /* Standard transitions */
-  --duration-slow: 500ms;            /* Smooth animations */
-  --duration-slower: 700ms;          /* Page transitions */
+  --duration-fast: 150ms; /* Quick interactions */
+  --duration-normal: 300ms; /* Standard transitions */
+  --duration-slow: 500ms; /* Smooth animations */
+  --duration-slower: 700ms; /* Page transitions */
 
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -214,7 +217,6 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
-
 }
 
 /* ========================================
@@ -225,8 +227,8 @@
   /* ========================================
      BASE COLORS
      ======================================== */
-  --background: oklch(0.145 0 0);    /* Dark background */
-  --foreground: oklch(0.985 0 0);    /* Light text */
+  --background: oklch(0.145 0 0); /* Dark background */
+  --foreground: oklch(0.985 0 0); /* Light text */
 
   /* ========================================
      CARD COLORS
@@ -243,7 +245,7 @@
   /* ========================================
      PRIMARY COLORS
      ======================================== */
-  --primary: oklch(0.922 0 0);       /* Light primary in dark mode */
+  --primary: oklch(0.922 0 0); /* Light primary in dark mode */
   --primary-foreground: oklch(0.205 0 0); /* Dark text on light button */
 
   /* ========================================
@@ -266,13 +268,13 @@
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
 
-  --success: oklch(0.70 0.20 150);   /* Brighter green for dark mode */
+  --success: oklch(0.7 0.2 150); /* Brighter green for dark mode */
   --success-foreground: oklch(0.145 0 0);
 
-  --warning: oklch(0.80 0.16 85);    /* Brighter yellow for dark mode */
+  --warning: oklch(0.8 0.16 85); /* Brighter yellow for dark mode */
   --warning-foreground: oklch(0.145 0 0);
 
-  --info: oklch(0.65 0.16 250);      /* Brighter blue for dark mode */
+  --info: oklch(0.65 0.16 250); /* Brighter blue for dark mode */
   --info-foreground: oklch(0.985 0 0);
 
   /* ========================================
@@ -306,23 +308,25 @@
   /* ========================================
      BRAND COLORS ADJUSTED FOR DARK MODE
      ======================================== */
-  --brand: oklch(0.70 0.20 30);      /* Brighter orange */
+  --brand: oklch(0.7 0.2 30); /* Brighter orange */
   --brand-foreground: oklch(0.145 0 0);
-  --brand-secondary: oklch(0.60 0.22 353); /* Brighter red */
+  --brand-secondary: oklch(0.6 0.22 353); /* Brighter red */
   --brand-secondary-foreground: oklch(0.985 0 0);
-  --brand-dark: oklch(0.60 0.12 212); /* Lighter blue (naming paradox) */
+  --brand-dark: oklch(0.6 0.12 212); /* Lighter blue (naming paradox) */
   --brand-dark-foreground: oklch(0.145 0 0);
 
   /* ========================================
      SHADOWS ADJUSTED FOR DARK MODE
      ======================================== */
   --shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.3);
-  --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.3);
-  --shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.4);
-  --shadow-xl: 0 20px 25px -5px oklch(0 0 0 / 0.6), 0 8px 10px -6px oklch(0 0 0 / 0.5);
+  --shadow-md:
+    0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.3);
+  --shadow-lg:
+    0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.4);
+  --shadow-xl:
+    0 20px 25px -5px oklch(0 0 0 / 0.6), 0 8px 10px -6px oklch(0 0 0 / 0.5);
   --shadow-2xl: 0 25px 50px -12px oklch(0 0 0 / 0.7);
   --shadow-inner: inset 0 2px 4px 0 oklch(0 0 0 / 0.3);
-
 }
 
 /* ========================================
@@ -451,10 +455,10 @@
 /* Hide scrollbars - Use: className="no-scrollbar" */
 @utility no-scrollbar {
   &::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    display: none; /* Chrome, Safari, Opera */
   }
-  -ms-overflow-style: none;   /* IE, Edge */
-  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Faded bottom effect - Use: className="faded-bottom" */
@@ -478,13 +482,19 @@
 }
 
 @keyframes slideDown {
-  from { height: 0; }
-  to { height: var(--radix-collapsible-content-height); }
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
 }
 
 @keyframes slideUp {
-  from { height: var(--radix-collapsible-content-height); }
-  to { height: 0; }
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
-
-

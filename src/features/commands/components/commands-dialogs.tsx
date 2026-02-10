@@ -54,8 +54,8 @@ export function CommandsDialogs() {
             title={`Delete this command?`}
             desc={
               <>
-                You are about to delete{' '}
-                <strong>{currentRow.title}</strong>. <br />
+                You are about to delete <strong>{currentRow.title}</strong>.{' '}
+                <br />
                 This action cannot be undone.
               </>
             }

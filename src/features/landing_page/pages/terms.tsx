@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
 import { Link } from '@tanstack/react-router'
+import { Button } from '@/components/ui/button'
 import Layout from '@/components/layout/landing-page-layout'
 
 const Terms = () => {
@@ -9,7 +9,7 @@ const Terms = () => {
     <Layout>
       {/* Hero section */}
       <div className='relative flex min-h-[40vh] items-center justify-center bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900'>
-        <div className='container z-10 mx-auto px-4 py-16 text-center'>
+        <div className='z-10 container mx-auto px-4 py-16 text-center'>
           <h1 className='mb-4 text-4xl font-bold text-white md:text-5xl'>
             Terms of Service
           </h1>
@@ -25,10 +25,10 @@ const Terms = () => {
       {/* Content */}
       <section className='py-16'>
         <div className='container mx-auto px-4'>
-          <div className='prose prose-lg mx-auto max-w-3xl dark:prose-invert'>
+          <div className='prose prose-lg dark:prose-invert mx-auto max-w-3xl'>
             {/* 1. Acceptance */}
             <h2 className='mb-4 text-2xl font-bold'>1. Acceptance of Terms</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               By accessing or using CmdVault ("the Service"), you agree to be
               bound by these Terms of Service. If you do not agree to these
               terms, please do not use the Service. CmdVault reserves the right
@@ -40,27 +40,28 @@ const Terms = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               2. Description of Service
             </h2>
-            <p className='mb-6 text-muted-foreground'>
-              CmdVault is a web application that allows users to store, organize,
-              search, and share command-line commands. The Service provides
-              personal vaults for saving commands, team collaboration features,
-              and a community-driven public vault for discovering commands shared
-              by other developers.
+            <p className='text-muted-foreground mb-6'>
+              CmdVault is a web application that allows users to store,
+              organize, search, and share command-line commands. The Service
+              provides personal vaults for saving commands, team collaboration
+              features, and a community-driven public vault for discovering
+              commands shared by other developers.
             </p>
 
             {/* 3. User Accounts */}
             <h2 className='mb-4 text-2xl font-bold'>3. User Accounts</h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               To access certain features of the Service, you must create an
               account. When creating an account, you agree to:
             </p>
-            <ul className='mb-6 list-disc space-y-2 pl-6 text-muted-foreground'>
+            <ul className='text-muted-foreground mb-6 list-disc space-y-2 pl-6'>
               <li>
                 Provide accurate, current, and complete information during
                 registration.
               </li>
               <li>
-                Maintain and update your account information to keep it accurate.
+                Maintain and update your account information to keep it
+                accurate.
               </li>
               <li>
                 Keep your password secure and confidential. You are responsible
@@ -74,13 +75,13 @@ const Terms = () => {
 
             {/* 4. Acceptable Use */}
             <h2 className='mb-4 text-2xl font-bold'>4. Acceptable Use</h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               You agree to use CmdVault only for lawful purposes. You shall not:
             </p>
-            <ul className='mb-6 list-disc space-y-2 pl-6 text-muted-foreground'>
+            <ul className='text-muted-foreground mb-6 list-disc space-y-2 pl-6'>
               <li>
-                Upload or share commands that contain malicious code, malware, or
-                exploits intended to harm others.
+                Upload or share commands that contain malicious code, malware,
+                or exploits intended to harm others.
               </li>
               <li>
                 Use the Service to distribute spam, phishing content, or
@@ -102,32 +103,30 @@ const Terms = () => {
 
             {/* 5. User Content */}
             <h2 className='mb-4 text-2xl font-bold'>5. User Content</h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               You retain ownership of any commands and content you submit to
               CmdVault. By submitting content to the Service, you grant CmdVault
               a non-exclusive, worldwide, royalty-free license to:
             </p>
-            <ul className='mb-6 list-disc space-y-2 pl-6 text-muted-foreground'>
-              <li>
-                Store and display your content as part of the Service.
-              </li>
+            <ul className='text-muted-foreground mb-6 list-disc space-y-2 pl-6'>
+              <li>Store and display your content as part of the Service.</li>
               <li>
                 Make publicly shared commands available to other users of the
                 community vault.
               </li>
-              <li>
-                Use aggregated, anonymized data to improve the Service.
-              </li>
+              <li>Use aggregated, anonymized data to improve the Service.</li>
             </ul>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               You are solely responsible for the content you submit. CmdVault
               does not endorse or verify the accuracy, safety, or legality of
               user-submitted commands.
             </p>
 
             {/* 6. Intellectual Property */}
-            <h2 className='mb-4 text-2xl font-bold'>6. Intellectual Property</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <h2 className='mb-4 text-2xl font-bold'>
+              6. Intellectual Property
+            </h2>
+            <p className='text-muted-foreground mb-6'>
               The Service, including its design, logos, trademarks, and
               underlying code, is the property of CmdVault and is protected by
               intellectual property laws. You may not copy, modify, or
@@ -137,23 +136,23 @@ const Terms = () => {
 
             {/* 7. Termination */}
             <h2 className='mb-4 text-2xl font-bold'>7. Termination</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               CmdVault may suspend or terminate your account at any time if you
               violate these terms or engage in conduct that is harmful to the
               Service or other users. You may also delete your account at any
               time. Upon termination, your right to access the Service ceases
-              immediately. CmdVault may retain certain data as required by law or
-              for legitimate business purposes.
+              immediately. CmdVault may retain certain data as required by law
+              or for legitimate business purposes.
             </p>
 
             {/* 8. Disclaimers */}
             <h2 className='mb-4 text-2xl font-bold'>8. Disclaimers</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               The Service is provided "as is" and "as available" without
               warranties of any kind, either express or implied. CmdVault does
               not guarantee that the Service will be uninterrupted, error-free,
-              or secure. You use the Service at your own risk. Commands shared on
-              the platform are user-generated and should be reviewed before
+              or secure. You use the Service at your own risk. Commands shared
+              on the platform are user-generated and should be reviewed before
               execution in any environment.
             </p>
 
@@ -161,7 +160,7 @@ const Terms = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               9. Limitation of Liability
             </h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               To the fullest extent permitted by law, CmdVault shall not be
               liable for any indirect, incidental, special, consequential, or
               punitive damages arising out of or related to your use of the
@@ -171,7 +170,7 @@ const Terms = () => {
 
             {/* 10. Governing Law */}
             <h2 className='mb-4 text-2xl font-bold'>10. Governing Law</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               These terms shall be governed by and construed in accordance with
               the laws of the jurisdiction in which CmdVault operates, without
               regard to conflict of law principles. Any disputes arising from
@@ -181,17 +180,17 @@ const Terms = () => {
 
             {/* 11. Changes */}
             <h2 className='mb-4 text-2xl font-bold'>11. Changes to Terms</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               CmdVault reserves the right to modify these Terms of Service at
               any time. We will notify users of significant changes by posting a
               notice on the Service or sending an email. Your continued use of
-              the Service after changes are posted constitutes your acceptance of
-              the revised terms.
+              the Service after changes are posted constitutes your acceptance
+              of the revised terms.
             </p>
 
             {/* 12. Contact */}
             <h2 className='mb-4 text-2xl font-bold'>12. Contact Us</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               If you have any questions about these Terms of Service, please
               contact us through our{' '}
               <Link

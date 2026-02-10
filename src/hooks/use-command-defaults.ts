@@ -46,10 +46,7 @@ export function useCommandDefaults() {
 
   const setDefaults = useCallback((next: Partial<CommandDefaults>) => {
     const current = getSnapshot()
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({ ...current, ...next })
-    )
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...current, ...next }))
     emitChange()
   }, [])
 

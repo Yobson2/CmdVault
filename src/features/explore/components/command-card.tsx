@@ -96,7 +96,7 @@ export function CommandCard({ command }: CommandCardProps) {
             className='overflow-x-auto px-3 py-2.5 transition-[max-height] duration-200'
             style={{ maxHeight: expanded ? 300 : COLLAPSED_HEIGHT }}
           >
-            <code className='block whitespace-pre-wrap break-all font-mono text-[13px] leading-relaxed text-green-400'>
+            <code className='block font-mono text-[13px] leading-relaxed break-all whitespace-pre-wrap text-green-400'>
               <span className='text-zinc-500 select-none'>$ </span>
               {command.command_text}
             </code>

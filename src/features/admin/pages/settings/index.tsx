@@ -18,16 +18,15 @@ export default function Settings() {
   return (
     <>
       {/* ===== Top Heading ===== */}
-      <Header fixed className='border-b border-border bg-background'>
+      <Header fixed className='border-border bg-background border-b'>
         <div className='flex items-center gap-2'>
           <h1 className='text-lg font-semibold'>Settings</h1>
         </div>
         <div className='ml-auto flex items-center space-x-4'>
           <Search />
-           <ThemeSwitch />
+          <ThemeSwitch />
           <ProfileDropdown />
         </div>
-        
       </Header>
 
       <Main fixed>

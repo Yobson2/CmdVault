@@ -8,15 +8,15 @@ import { DataTable } from './components/data-table'
 import { TeamsDialogs } from './components/teams-dialogs'
 import { TeamsPrimaryButtons } from './components/teams-primary-buttons'
 import TeamsProvider from './context/teams-context'
-import { useTeamsQuery } from './hooks/use-teams-queries'
 import type { Team } from './data/schema'
+import { useTeamsQuery } from './hooks/use-teams-queries'
 
 export default function Teams() {
   const { data: teams, isLoading } = useTeamsQuery()
 
   return (
     <TeamsProvider>
-      <Header fixed className='border-b border-border bg-background'>
+      <Header fixed className='border-border bg-background border-b'>
         <div className='flex items-center gap-2'>
           <h1 className='text-lg font-semibold'>Teams</h1>
         </div>

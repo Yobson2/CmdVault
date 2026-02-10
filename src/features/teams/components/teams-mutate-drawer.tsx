@@ -84,8 +84,8 @@ export function TeamsMutateDrawer({ open, onOpenChange, currentRow }: Props) {
           <SheetDescription>
             {isUpdate
               ? 'Update the team details below.'
-              : 'Create a new team to collaborate with others.'}
-            {' '}Click save when you&apos;re done.
+              : 'Create a new team to collaborate with others.'}{' '}
+            Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader>
         <Form {...form}>

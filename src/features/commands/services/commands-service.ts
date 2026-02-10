@@ -1,5 +1,5 @@
-import { supabase } from '@/lib/supabase'
 import type { Database, Insertable, Updatable } from '@/types/database.types'
+import { supabase } from '@/lib/supabase'
 import type { CommandForm } from '../data/schema'
 
 type CommandRow = Database['public']['Tables']['commands']['Row']

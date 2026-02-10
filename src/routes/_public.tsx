@@ -1,6 +1,5 @@
-import { SidebarProvider } from '@/components/ui/sidebar'
 import { createFileRoute, Outlet } from '@tanstack/react-router'
-
+import { SidebarProvider } from '@/components/ui/sidebar'
 
 export const Route = createFileRoute('/_public')({
   component: () => (
@@ -8,5 +7,4 @@ export const Route = createFileRoute('/_public')({
       <Outlet />
     </SidebarProvider>
   ),
-
-}) 
+})

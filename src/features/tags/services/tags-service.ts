@@ -1,5 +1,5 @@
-import { supabase } from '@/lib/supabase'
 import type { Database, Insertable, Updatable } from '@/types/database.types'
+import { supabase } from '@/lib/supabase'
 import type { Tag } from '../data/schema'
 
 type TagRow = Database['public']['Tables']['tags']['Row']
@@ -24,7 +24,7 @@ export async function getTagsWithCount(): Promise<Tag[]> {
     countMap[row.tag_id] = (countMap[row.tag_id] ?? 0) + 1
   }
 
-  return (tags as TagRow[] ?? []).map((tag) => ({
+  return ((tags as TagRow[]) ?? []).map((tag) => ({
     ...tag,
     command_count: countMap[tag.id] ?? 0,
   }))

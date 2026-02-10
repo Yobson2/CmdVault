@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
 import { Link } from '@tanstack/react-router'
+import { Button } from '@/components/ui/button'
 import Layout from '@/components/layout/landing-page-layout'
 
 const Privacy = () => {
@@ -9,7 +9,7 @@ const Privacy = () => {
     <Layout>
       {/* Hero section */}
       <div className='relative flex min-h-[40vh] items-center justify-center bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900'>
-        <div className='container z-10 mx-auto px-4 py-16 text-center'>
+        <div className='z-10 container mx-auto px-4 py-16 text-center'>
           <h1 className='mb-4 text-4xl font-bold text-white md:text-5xl'>
             Privacy Policy
           </h1>
@@ -25,10 +25,10 @@ const Privacy = () => {
       {/* Content */}
       <section className='py-16'>
         <div className='container mx-auto px-4'>
-          <div className='prose prose-lg mx-auto max-w-3xl dark:prose-invert'>
+          <div className='prose prose-lg dark:prose-invert mx-auto max-w-3xl'>
             {/* 1. Introduction */}
             <h2 className='mb-4 text-2xl font-bold'>1. Introduction</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               CmdVault ("we", "our", or "the Service") is committed to
               protecting your privacy. This Privacy Policy explains how we
               collect, use, store, and share your personal information when you
@@ -40,14 +40,14 @@ const Privacy = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               2. Information We Collect
             </h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               We collect the following types of information:
             </p>
 
             <h3 className='mb-2 text-xl font-semibold'>
               2.1 Account Information
             </h3>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               When you create an account, we collect your name, email address,
               and password. If you sign up using a third-party provider (e.g.,
               GitHub, Google), we receive your profile information from that
@@ -55,14 +55,14 @@ const Privacy = () => {
             </p>
 
             <h3 className='mb-2 text-xl font-semibold'>2.2 User Content</h3>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               We store the commands, descriptions, tags, and other content you
               submit to the Service. This includes both private vault entries
               and publicly shared commands.
             </p>
 
             <h3 className='mb-2 text-xl font-semibold'>2.3 Usage Data</h3>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               We automatically collect information about how you interact with
               the Service, including pages visited, features used, browser type,
               device information, and IP address. This data helps us improve the
@@ -73,36 +73,28 @@ const Privacy = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               3. How We Use Your Information
             </h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               We use your information to:
             </p>
-            <ul className='mb-6 list-disc space-y-2 pl-6 text-muted-foreground'>
+            <ul className='text-muted-foreground mb-6 list-disc space-y-2 pl-6'>
               <li>Provide, maintain, and improve the Service.</li>
-              <li>
-                Authenticate your identity and manage your account.
-              </li>
+              <li>Authenticate your identity and manage your account.</li>
               <li>
                 Enable features such as command storage, search, and team
                 collaboration.
               </li>
-              <li>
-                Send you service-related notifications and updates.
-              </li>
-              <li>
-                Analyze usage patterns to improve user experience.
-              </li>
-              <li>
-                Detect and prevent fraud, abuse, or security issues.
-              </li>
+              <li>Send you service-related notifications and updates.</li>
+              <li>Analyze usage patterns to improve user experience.</li>
+              <li>Detect and prevent fraud, abuse, or security issues.</li>
             </ul>
 
             {/* 4. Data Sharing */}
             <h2 className='mb-4 text-2xl font-bold'>4. Data Sharing</h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               We do not sell your personal information. We may share your data
               in the following limited circumstances:
             </p>
-            <ul className='mb-6 list-disc space-y-2 pl-6 text-muted-foreground'>
+            <ul className='text-muted-foreground mb-6 list-disc space-y-2 pl-6'>
               <li>
                 <strong>Public commands:</strong> Commands you choose to share
                 publicly will be visible to all users of the community vault.
@@ -127,7 +119,7 @@ const Privacy = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               5. Data Storage & Security
             </h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               Your data is stored on secure servers with encryption at rest and
               in transit. We implement industry-standard security measures to
               protect your information, including access controls, regular
@@ -138,7 +130,7 @@ const Privacy = () => {
 
             {/* 6. Data Retention */}
             <h2 className='mb-4 text-2xl font-bold'>6. Data Retention</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               We retain your account data for as long as your account is active.
               If you delete your account, we will remove your personal
               information within 30 days, except where retention is required by
@@ -149,11 +141,11 @@ const Privacy = () => {
 
             {/* 7. Your Rights */}
             <h2 className='mb-4 text-2xl font-bold'>7. Your Rights</h2>
-            <p className='mb-4 text-muted-foreground'>
+            <p className='text-muted-foreground mb-4'>
               Depending on your jurisdiction, you may have the following rights
               regarding your personal data:
             </p>
-            <ul className='mb-6 list-disc space-y-2 pl-6 text-muted-foreground'>
+            <ul className='text-muted-foreground mb-6 list-disc space-y-2 pl-6'>
               <li>
                 <strong>Access:</strong> Request a copy of the personal data we
                 hold about you.
@@ -175,7 +167,7 @@ const Privacy = () => {
                 data.
               </li>
             </ul>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               To exercise any of these rights, please contact us through our{' '}
               <Link
                 to='/contact'
@@ -190,7 +182,7 @@ const Privacy = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               8. Cookies & Local Storage
             </h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               CmdVault uses cookies and local storage to maintain your session,
               remember your preferences (such as theme and sidebar state), and
               improve your experience. We do not use third-party tracking
@@ -200,7 +192,7 @@ const Privacy = () => {
 
             {/* 9. Third-Party Services */}
             <h2 className='mb-4 text-2xl font-bold'>9. Third-Party Services</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               The Service may integrate with third-party services (e.g., GitHub
               for authentication). These services have their own privacy
               policies, and we encourage you to review them. CmdVault is not
@@ -209,7 +201,7 @@ const Privacy = () => {
 
             {/* 10. Children's Privacy */}
             <h2 className='mb-4 text-2xl font-bold'>10. Children's Privacy</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               CmdVault is not intended for children under the age of 13. We do
               not knowingly collect personal information from children. If we
               learn that we have collected data from a child under 13, we will
@@ -220,7 +212,7 @@ const Privacy = () => {
             <h2 className='mb-4 text-2xl font-bold'>
               11. Changes to This Policy
             </h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               We may update this Privacy Policy from time to time. We will
               notify you of significant changes by posting a notice on the
               Service or sending an email. Your continued use of the Service
@@ -230,7 +222,7 @@ const Privacy = () => {
 
             {/* 12. Contact */}
             <h2 className='mb-4 text-2xl font-bold'>12. Contact Us</h2>
-            <p className='mb-6 text-muted-foreground'>
+            <p className='text-muted-foreground mb-6'>
               If you have any questions about this Privacy Policy or how we
               handle your data, please contact us through our{' '}
               <Link

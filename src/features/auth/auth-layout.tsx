@@ -23,7 +23,7 @@ export default function AuthLayout({ children }: Props) {
         </Link>
 
         <div className='relative z-10 space-y-4'>
-          <h2 className='text-3xl font-bold leading-tight'>
+          <h2 className='text-3xl leading-tight font-bold'>
             Your commands,
             <span className='block bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent'>
               always ready.

@@ -11,21 +11,21 @@ export const tokens = {
       700: '#0369a1',
       800: '#075985',
       900: '#0c4a6e',
-      
+
       // DEFAULT: '#FF8C00',
-			// light: '#FFAA33',
-			// dark: '#E67300'
+      // light: '#FFAA33',
+      // dark: '#E67300'
     },
     ivoryGreen: {
-					DEFAULT: '#00843D',
-					light: '#16A658',
-					dark: '#006B31'
-				},
-		vtcBlue: {
-					DEFAULT: '#0A1931',
-					light: '#1E3054',
-					dark: '#050D1A'
-		},
+      DEFAULT: '#00843D',
+      light: '#16A658',
+      dark: '#006B31',
+    },
+    vtcBlue: {
+      DEFAULT: '#0A1931',
+      light: '#1E3054',
+      dark: '#050D1A',
+    },
     success: {
       50: '#f0fdf4',
       100: '#dcfce7',
@@ -73,7 +73,7 @@ export const tokens = {
       teal: '#14b8a6',
       amber: '#f59e0b',
       pink: '#ec4899',
-    }
+    },
   },
   spacing: {
     xs: '0.25rem',
@@ -109,7 +109,7 @@ export const tokens = {
       tight: '1.25',
       normal: '1.5',
       loose: '1.75',
-    }
+    },
   },
   shadows: {
     sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -121,11 +121,8 @@ export const tokens = {
     fast: '150ms cubic-bezier(0.4, 0, 0.2, 1)',
     normal: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
     slow: '500ms cubic-bezier(0.4, 0, 0.2, 1)',
-  }
-} 
-
-
-
+  },
+}
 
 // Orange Foncé (#E65100) : identité visuelle forte africaine
 // Jaune Mobilité (#FFEB3B) : visibilité, chaleur

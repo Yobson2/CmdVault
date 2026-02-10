@@ -1,5 +1,5 @@
-import { supabase } from '@/lib/supabase'
 import type { Database, Insertable, Updatable } from '@/types/database.types'
+import { supabase } from '@/lib/supabase'
 import type { Team } from '../data/schema'
 
 type TeamRow = Database['public']['Tables']['teams']['Row']
@@ -41,7 +41,7 @@ export async function getTeams(userId: string): Promise<Team[]> {
     countMap[row.team_id] = (countMap[row.team_id] ?? 0) + 1
   }
 
-  return (teams as TeamRow[] ?? []).map((team) => ({
+  return ((teams as TeamRow[]) ?? []).map((team) => ({
     ...team,
     member_count: countMap[team.id] ?? 0,
     user_role: roleMap[team.id] ?? 'member',

@@ -1,23 +1,19 @@
-import {
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/authStore'
-import {
-  getTeams,
-  createTeam,
-  updateTeam,
-  deleteTeam,
-} from '../services/teams-service'
+import type { TeamForm } from '../data/schema'
 import {
   getTeamMembers,
   addTeamMember,
   updateMemberRole,
   removeTeamMember,
 } from '../services/members-service'
-import type { TeamForm } from '../data/schema'
+import {
+  getTeams,
+  createTeam,
+  updateTeam,
+  deleteTeam,
+} from '../services/teams-service'
 
 export const teamKeys = {
   all: ['teams'] as const,
@@ -28,9 +24,10 @@ export const teamKeys = {
 export function useTeamsQuery() {
   const { user } = useAuthStore((s) => s.auth)
 
+  const userId = user?.id
   return useQuery({
-    queryKey: teamKeys.lists(),
-    queryFn: () => getTeams(user!.id),
+    queryKey: [...teamKeys.lists(), userId],
+    queryFn: () => getTeams(userId!),
     enabled: !!user,
   })
 }

@@ -37,6 +37,7 @@ An intelligent vault for developers to store, organize, reuse, and share proven 
 ## Key Features
 
 ### Command Vault
+
 - Full CRUD for commands with title, description, command text, language, category, and visibility
 - Tag system with custom colors for organization
 - Favorite commands for quick access
@@ -44,21 +45,25 @@ An intelligent vault for developers to store, organize, reuse, and share proven 
 - Copy-to-clipboard with one click
 
 ### Explore & Share
+
 - Browse public commands shared by the community
 - Filter by language, category, or keyword
 - Sort by recent, popular, or most used
 
 ### Teams
+
 - Create teams and invite members
 - Share commands at team-level visibility
 - Role-based access (admin, member)
 
 ### Dashboard
+
 - Overview of your vault: total commands, favorites, languages used, commands this month
 - Monthly trend chart of commands saved
 - Recent commands list
 
 ### Settings
+
 - **Profile** — Edit display name, view email
 - **Appearance** — Light/dark theme, font selection
 - **Command Defaults** — Set default language, category, and visibility for new commands
@@ -67,6 +72,7 @@ An intelligent vault for developers to store, organize, reuse, and share proven 
 - **Danger Zone** — Delete all commands or delete account
 
 ### Authentication
+
 - Email/password sign-in and sign-up via Supabase Auth
 - GitHub OAuth
 - Password recovery flow
@@ -74,6 +80,7 @@ An intelligent vault for developers to store, organize, reuse, and share proven 
 - Protected routes with automatic session management
 
 ### Other
+
 - Light and dark mode
 - Global search (command palette)
 - i18n foundation (English, French)
@@ -82,23 +89,23 @@ An intelligent vault for developers to store, organize, reuse, and share proven 
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Framework | React 19.1.0 |
-| Language | TypeScript 5.8 (strict mode) |
-| Build | Vite 6.2 with SWC |
-| Backend | Supabase (Auth + PostgreSQL + RLS) |
-| Routing | TanStack Router (file-based) |
-| Server State | TanStack Query v5 |
-| Client State | Zustand v5 |
-| UI Components | ShadcnUI + Radix UI |
-| Styling | TailwindCSS 4.1 |
-| Forms | React Hook Form + Zod |
-| Tables | TanStack Table v8 |
-| Charts | Recharts |
-| Icons | Tabler Icons, Lucide React |
-| i18n | i18next |
-| Notifications | Sonner |
+| Layer         | Technology                         |
+| ------------- | ---------------------------------- |
+| Framework     | React 19.1.0                       |
+| Language      | TypeScript 5.8 (strict mode)       |
+| Build         | Vite 6.2 with SWC                  |
+| Backend       | Supabase (Auth + PostgreSQL + RLS) |
+| Routing       | TanStack Router (file-based)       |
+| Server State  | TanStack Query v5                  |
+| Client State  | Zustand v5                         |
+| UI Components | ShadcnUI + Radix UI                |
+| Styling       | TailwindCSS 4.1                    |
+| Forms         | React Hook Form + Zod              |
+| Tables        | TanStack Table v8                  |
+| Charts        | Recharts                           |
+| Icons         | Tabler Icons, Lucide React         |
+| i18n          | i18next                            |
+| Notifications | Sonner                             |
 
 ## Project Structure
 
@@ -153,31 +160,38 @@ supabase/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/cmdvault.git
    cd cmdvault
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env.local
    ```
+
    Fill in your Supabase credentials (see [Environment Variables](#environment-variables)).
 
 4. **Apply database migrations**
+
    ```bash
    npx supabase login
    npx supabase link --project-ref <your-project-ref>
    npx supabase db push
    ```
+
    This creates all tables, RLS policies, and triggers in your Supabase project.
 
 5. **Start the development server**
+
    ```bash
    pnpm run dev
    ```
@@ -274,6 +288,7 @@ CmdVault uses Supabase (PostgreSQL) with Row Level Security. Migrations are in `
 ### Row Level Security
 
 All tables have RLS enabled. Key policies:
+
 - Users can only modify their own commands, profile, and tags
 - Public-visibility commands are readable by all authenticated users
 - Team-visibility commands are readable by team members
@@ -283,17 +298,18 @@ All tables have RLS enabled. Key policies:
 
 ### State Management
 
-| Type | Tool | Purpose |
-|------|------|---------|
-| Global client state | Zustand | Auth session, user |
-| Server state | TanStack Query | Commands, tags, teams, dashboard stats |
-| UI state | React Context | Theme, font, search |
-| Feature state | React Context | Dialog open/close, selected row |
-| Form state | React Hook Form | Form inputs, validation |
+| Type                | Tool            | Purpose                                |
+| ------------------- | --------------- | -------------------------------------- |
+| Global client state | Zustand         | Auth session, user                     |
+| Server state        | TanStack Query  | Commands, tags, teams, dashboard stats |
+| UI state            | React Context   | Theme, font, search                    |
+| Feature state       | React Context   | Dialog open/close, selected row        |
+| Form state          | React Hook Form | Form inputs, validation                |
 
 ### Routing
 
 File-based routing via TanStack Router with two layout groups:
+
 - **`_authenticated`** — Wraps all protected pages with sidebar layout. Checks session in `beforeLoad`; redirects to `/sign-in` if unauthenticated.
 - **`(auth)`** — Auth pages (sign-in, sign-up, forgot-password, OTP) with a dedicated auth layout.
 
@@ -302,6 +318,7 @@ The route tree is auto-generated at `src/routeTree.gen.ts` by the TanStack Route
 ### Feature Module Pattern
 
 Each feature follows a consistent structure:
+
 ```
 features/<name>/
 ├── index.tsx           # Main page component
@@ -331,6 +348,7 @@ vercel
 ```
 
 Set the environment variables in the Vercel dashboard:
+
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
 
